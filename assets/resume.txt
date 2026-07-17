@@ -1,0 +1,23 @@
+Aarya Kadam — Cloud Engineer
+
+Summary
+Cloud Engineer focused on scalable infrastructure, reliable deployments, and continuous learning in AWS, Linux, and DevOps.
+
+Core Skills
+- AWS: EC2, IAM fundamentals
+- Linux: CLI, services, networking
+- DevOps: Docker workflows, CI-minded automation
+- IaC: Terraform (learning), infrastructure planning
+- Kubernetes: (learning) orchestration concepts
+- Web: HTML, CSS, JavaScript, Nginx fundamentals
+
+Projects (Selected)
+- Auto-Deploy Pipeline: consistent environments for build + release workflows
+- EC2 Reliability Lab: security group + instance configuration practice
+- Terraform Roadmap: modular IaC foundations and repeatable setups
+
+Contact
+Email: aarya@example.com
+GitHub: https://github.com/
+LinkedIn: https://www.linkedin.com/
+

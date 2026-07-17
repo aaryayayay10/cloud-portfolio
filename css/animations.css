@@ -1,0 +1,27 @@
+/* ============================
+   Additional animations
+============================ */
+
+/* These animations are referenced by classes in index.html + JS */
+
+@keyframes caretBlink{ 0%,45%{opacity:1;} 55%,100%{opacity:0;} }
+
+/* Subtle hover glow for buttons/cards */
+@keyframes buttonGlow{
+  0%{ box-shadow: 0 0 0 rgba(56,189,248,.0); }
+  100%{ box-shadow: 0 0 40px rgba(56,189,248,.22); }
+}
+
+/* Micro float already in style.css; keep here for safety */
+@keyframes float{
+  0%{ transform: translateY(0px); }
+  50%{ transform: translateY(-15px); }
+  100%{ transform: translateY(0px); }
+}
+
+/* Optional utility */
+@keyframes shimmer{
+  0%{ transform: rotate(10deg) translateX(-45%); }
+  100%{ transform: rotate(10deg) translateX(45%); }
+}
+
