@@ -1,44 +1,81 @@
+/* ==========================================
+   TYPING EFFECT
+========================================== */
+
+const typingElement = document.getElementById("typing");
+
 const words = [
+
     "Cloud Engineer",
-    "AWS Enthusiast",
-    "Linux Explorer",
-    "DevOps Learner",
-    "Software Engineer"
+
+    "AWS Certified",
+
+    "Full-Stack Developer",
+
+    "AI Solutions Builder",
+
+    "Technical & Creative Writer"
+
 ];
 
 let wordIndex = 0;
 let charIndex = 0;
-let deleting = false;
+let isDeleting = false;
 
-const typing = document.getElementById("typing");
+function typeEffect() {
 
-function type() {
+    const currentWord = words[wordIndex];
 
-    const current = words[wordIndex];
+    if (!isDeleting) {
 
-    if (!deleting) {
+        typingElement.textContent =
+            currentWord.substring(0, charIndex + 1);
 
-        typing.textContent = current.substring(0, charIndex++);
+        charIndex++;
+
+        if (charIndex === currentWord.length) {
+
+            isDeleting = true;
+
+            setTimeout(typeEffect, 1800);
+
+            return;
+
+        }
+
     } else {
 
-        typing.textContent = current.substring(0, charIndex--);
+        typingElement.textContent =
+            currentWord.substring(0, charIndex - 1);
+
+        charIndex--;
+
+        if (charIndex === 0) {
+
+            isDeleting = false;
+
+            wordIndex++;
+
+            if (wordIndex >= words.length) {
+
+                wordIndex = 0;
+
+            }
+
+        }
+
     }
 
-    let speed = deleting ? 50 : 100;
-
-    if (!deleting && charIndex === current.length + 1) {
-
-        deleting = true;
-        speed = 1500;
-
-    } else if (deleting && charIndex === 0) {
-
-        deleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-    }
-
-    setTimeout(type, speed);
+    setTimeout(typeEffect, isDeleting ? 60 : 120);
 
 }
 
-type();
+document.addEventListener("DOMContentLoaded", () => {
+
+    if (typingElement) {
+
+        typeEffect();
+
+    }
+
+});

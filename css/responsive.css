@@ -1,37 +1,290 @@
-/* ============================
-   Responsive adjustments
-============================ */
+/* ==========================================
+   RESPONSIVE.CSS
+========================================== */
 
-/* Navbar already handled in style.css for toggle */
+/* ==========================
+        Large Devices
+========================== */
 
-@media (max-width: 1100px){
-  .projects-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .skills-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
-  .status-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
-  .hero-grid{ grid-template-columns: 1fr; }
-  .hero-stats{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+@media (max-width:1200px){
+
+    .hero-left h1{
+
+        font-size:3.4rem;
+
+    }
+
+    .image-box{
+
+        width:450px;
+        height:450px;
+
+    }
+
 }
 
-@media (max-width: 900px){
-  .section{ padding: 70px 0; }
-  .section-head{ flex-direction:column; align-items:flex-start; }
-  .status-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .projects-grid{ grid-template-columns: 1fr; }
-  .skills-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .about-grid{ grid-template-columns: 1fr; }
-  .contact-grid{ grid-template-columns: 1fr; }
+/* ==========================
+        Tablets
+========================== */
+
+@media (max-width:992px){
+
+    .hero{
+
+        text-align:center;
+
+        padding-top:140px;
+
+    }
+
+    .hero-left{
+
+        margin-bottom:60px;
+
+    }
+
+    .hero-left p{
+
+        margin:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+    .hero-stats{
+
+        justify-content:center;
+
+    }
+
+    .image-box{
+
+        width:380px;
+        height:380px;
+
+    }
+
+    .section-title h2{
+
+        font-size:2.5rem;
+
+    }
+
+    .contact-box{
+
+        padding:50px 35px;
+
+    }
+
 }
 
-@media (max-width: 540px){
-  .hero{ padding-top: 58px; }
-  .hero-stats{ grid-template-columns: 1fr; }
-  .status-grid{ grid-template-columns: 1fr; }
-  .skills-grid{ grid-template-columns: 1fr; }
-  .section-title{ font-size: 1.7rem; }
+/* ==========================
+        Mobile
+========================== */
 
-  .timeline{ padding-left: 16px; }
-  .timeline-line{ left: 7px; }
+@media (max-width:768px){
 
-  nav .container{ padding: 0 12px; }
+    .section-padding{
+
+        padding:80px 0;
+
+    }
+
+    .hero{
+
+        min-height:auto;
+
+    }
+
+    .hero-left h1{
+
+        font-size:2.6rem;
+
+    }
+
+    .hero-left h2{
+
+        font-size:1.5rem;
+
+    }
+
+    .hero-left p{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .primary-btn,
+    .secondary-btn{
+
+        width:220px;
+
+        text-align:center;
+
+    }
+
+    .hero-stats{
+
+        gap:20px;
+
+    }
+
+    .hero-stats div{
+
+        width:100%;
+
+    }
+
+    .image-box{
+
+        width:300px;
+
+        height:300px;
+
+    }
+
+    .glass-card{
+
+        padding:30px;
+
+    }
+
+    .contact-box{
+
+        padding:40px 25px;
+
+    }
+
+    .contact-box h2{
+
+        font-size:2rem;
+
+    }
+
+    .contact-links{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .timeline{
+
+        padding-left:25px;
+
+    }
+
+    .timeline::before{
+
+        left:6px;
+
+    }
+
+    .timeline-item::before{
+
+        left:-30px;
+
+    }
+
 }
 
+/* ==========================
+      Small Phones
+========================== */
+
+@media (max-width:576px){
+
+    .navbar{
+
+        padding:15px 0;
+
+    }
+
+    .logo{
+
+        font-size:1.4rem;
+
+    }
+
+    .hero-left h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .hero-left h2{
+
+        font-size:1.3rem;
+
+    }
+
+    .section-title h2{
+
+        font-size:2rem;
+
+    }
+
+    .project-content{
+
+        padding:25px;
+
+    }
+
+    .skill-card{
+
+        padding:25px;
+
+    }
+
+    .dashboard-card{
+
+        padding:25px;
+
+    }
+
+    .glass-card{
+
+        padding:25px;
+
+    }
+
+    .image-box{
+
+        width:250px;
+
+        height:250px;
+
+    }
+
+    .contact-box{
+
+        border-radius:20px;
+
+    }
+
+    footer p{
+
+        font-size:.9rem;
+
+        line-height:1.8;
+
+    }
+
+}

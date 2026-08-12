@@ -1,27 +1,243 @@
-/* ============================
-   Additional animations
-============================ */
+/* ==========================================
+   ANIMATIONS.CSS
+========================================== */
 
-/* These animations are referenced by classes in index.html + JS */
+/* Fade Up */
+@keyframes fadeUp {
 
-@keyframes caretBlink{ 0%,45%{opacity:1;} 55%,100%{opacity:0;} }
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
 
-/* Subtle hover glow for buttons/cards */
-@keyframes buttonGlow{
-  0%{ box-shadow: 0 0 0 rgba(56,189,248,.0); }
-  100%{ box-shadow: 0 0 40px rgba(56,189,248,.22); }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
 
-/* Micro float already in style.css; keep here for safety */
-@keyframes float{
-  0%{ transform: translateY(0px); }
-  50%{ transform: translateY(-15px); }
-  100%{ transform: translateY(0px); }
+/* Fade Left */
+
+@keyframes fadeLeft{
+
+    from{
+        opacity:0;
+        transform:translateX(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
 }
 
-/* Optional utility */
-@keyframes shimmer{
-  0%{ transform: rotate(10deg) translateX(-45%); }
-  100%{ transform: rotate(10deg) translateX(45%); }
+/* Fade Right */
+
+@keyframes fadeRight{
+
+    from{
+        opacity:0;
+        transform:translateX(-60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
 }
 
+/* Zoom */
+
+@keyframes zoomIn{
+
+    from{
+        opacity:0;
+        transform:scale(.85);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+/* Floating Background */
+
+@keyframes floatSlow{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-30px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* Aurora Motion */
+
+@keyframes aurora{
+
+0%{
+
+transform:translate3d(0,0,0);
+
+}
+
+25%{
+
+transform:translate3d(8px,-6px,0);
+
+}
+
+50%{
+
+transform:translate3d(-10px,8px,0);
+
+}
+
+75%{
+
+transform:translate3d(6px,-5px,0);
+
+}
+
+100%{
+
+transform:translate3d(0,0,0);
+
+}
+
+}
+
+/* Background Animation */
+
+.background span{
+
+    animation:aurora 70s ease-in-out infinite alternate;
+
+}
+
+.background span:nth-child(2){
+
+    animation-duration:85s;
+
+}
+
+.background span:nth-child(3){
+
+    animation-duration:100s;
+
+}
+
+.background span:nth-child(4){
+
+    animation-duration:90s;
+
+}
+
+.background span:nth-child(5){
+
+    animation-duration:120s;
+
+}
+
+.background span:nth-child(6){
+
+    animation-duration:95s;
+
+}
+/* Hero */
+
+.hero-left{
+
+    animation:fadeRight 1s ease forwards;
+
+}
+
+.hero-right{
+
+    animation:fadeLeft 1s ease forwards;
+
+}
+
+/* Cards */
+
+.skill-card{
+
+    animation:zoomIn .8s ease;
+
+}
+
+.dashboard-card{
+
+    animation:zoomIn .8s ease;
+
+}
+
+.project-card{
+
+    animation:zoomIn .9s ease;
+
+}
+
+.timeline-item{
+
+    animation:fadeUp .9s ease;
+
+}
+
+.glass-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+/* Hover Float */
+
+.skill-card:hover,
+.project-card:hover,
+.dashboard-card:hover{
+
+    animation:floatSlow 3s ease-in-out infinite;
+
+}
+
+/* Button Hover */
+
+.primary-btn:hover{
+
+    animation:pulse .8s;
+
+}
+
+.secondary-btn:hover{
+
+    animation:pulse .8s;
+
+}
+
+/* Smooth Appearance */
+
+.section-title{
+
+    animation:fadeUp .9s ease;
+
+}
+
+/* Prevent animation overflow */
+
+body{
+
+    overflow-x:hidden;
+
+}
