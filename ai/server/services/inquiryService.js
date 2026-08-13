@@ -2,8 +2,11 @@ const supabase = require("../database/supabase");
 
 async function saveInquiry(inquiryData) {
 
+    const { message, ...leadData } = inquiryData;
+
     const dataToSave = {
-        ...inquiryData,
+        ...leadData,
+        description: leadData.description || message,
         services: Array.isArray(inquiryData.services)
             ? inquiryData.services
             : [inquiryData.services],
