@@ -2,16 +2,45 @@ const supabase = require("../database/supabase");
 
 async function saveInquiry(inquiryData) {
 
-    const { message, ...leadData } = inquiryData;
+    const {
+        name,
+        full_name,
+        company,
+        email,
+        phone,
+        services,
+        message,
+        description,
+        timeline,
+        budget
+    } = inquiryData;
 
     const dataToSave = {
-        ...leadData,
-        description: leadData.description || message,
-        services: Array.isArray(inquiryData.services)
-            ? inquiryData.services
-            : [inquiryData.services],
+        full_name: full_name || name,
+        email,
+        description: description || message,
         status: "New"
     };
+
+    if (company) {
+        dataToSave.company = company;
+    }
+
+    if (phone) {
+        dataToSave.phone = phone;
+    }
+
+    if (services) {
+        dataToSave.services = Array.isArray(services) ? services : [services];
+    }
+
+    if (timeline) {
+        dataToSave.timeline = timeline;
+    }
+
+    if (budget) {
+        dataToSave.budget = budget;
+    }
 
     const { data, error } = await supabase
         .from("leads")
