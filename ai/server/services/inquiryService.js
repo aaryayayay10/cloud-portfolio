@@ -30,9 +30,11 @@ async function saveInquiry(inquiryData) {
         dataToSave.phone = phone;
     }
 
-    if (services) {
-        dataToSave.services = Array.isArray(services) ? services : [services];
-    }
+    dataToSave.services = Array.isArray(services)
+    ? services
+    : services
+        ? [services]
+        : [];
 
     if (timeline) {
         dataToSave.timeline = timeline;
